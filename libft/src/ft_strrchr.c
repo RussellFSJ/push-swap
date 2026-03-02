@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/22 21:30:45 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:01:00 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	char	*last_occ;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	last_occ = NULL;
+	while (*s)
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (*s == (char)c)
+			last_occ = (char *)s;
+		s++;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (last_occ);
 }

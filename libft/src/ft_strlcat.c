@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/22 21:30:16 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:51 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	i = 0;
+	j = 0;
+	k = 0;
+	while (i < size && dst[i])
+		i++;
+	while (src[j])
+		j++;
+	if (i >= size)
+		return (size + j);
+	while (k < size - 1 - i && src[k])
 	{
-		ft_printf("Error\n");
-		return (0);
+		dst[i + k] = src[k];
+		k++;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	dst[i + k] = '\0';
+	return (i + j);
 }

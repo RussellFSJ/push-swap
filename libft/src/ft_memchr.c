@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/28 19:29:43 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:04 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t			i;
+	unsigned char	*p;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	i = 0;
+	p = (unsigned char *)s;
+	while (i < n)
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (p[i] == (unsigned char)c)
+			return (&p[i]);
+		i++;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	return (NULL);
 }

@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2026/01/20 12:12:02 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:01:23 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+int	print_hex(unsigned long n, int uppercase)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	const char	*hex;
+	char		buffer[17];
+	int			i;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	hex = "0123456789abcdef";
+	if (uppercase)
+		hex = "0123456789ABCDEF";
+	i = 16;
+	buffer[i] = '\0';
+	if (n == 0)
+		return (write(1, "0", 1));
+	while (n > 0)
 	{
-		ft_printf("Error\n");
-		return (0);
+		buffer[--i] = hex[n % 16];
+		n /= 16;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	return (write(1, &buffer[i], 16 - i));
 }

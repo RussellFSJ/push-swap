@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/03 17:52:40 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:00 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+t_list	*ft_lstnew(void *content)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	t_list	*node;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

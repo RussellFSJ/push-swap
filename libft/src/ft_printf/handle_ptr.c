@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   handle_ptr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/18 19:08:17 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:01:17 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+int	handle_ptr(va_list *args)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	void			*ptr;
+	unsigned long	address;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	ptr = va_arg(*args, void *);
+	if (ptr == NULL)
+		return (write(1, "(nil)", 5));
+	address = (unsigned long)ptr;
+	return (write(1, "0x", 2) + print_hex(address, 0));
 }

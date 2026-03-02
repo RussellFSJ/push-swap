@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/28 19:44:14 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:06 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t				i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
-	{
-		ft_printf("Error\n");
+	if (n == 0)
 		return (0);
-	}
-	while (stack)
+	i = 0;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	while (i < n)
 	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
 	}
-	return (1);
+	return (0);
 }

@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/03 23:19:41 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 13:59:58 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	t_list	*new_list;
+	t_list	*new_node;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	if (!f || !del)
+		return (NULL);
+	new_list = NULL;
+	while (lst)
 	{
-		ft_printf("Error\n");
-		return (0);
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	return (new_list);
 }

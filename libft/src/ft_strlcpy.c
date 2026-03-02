@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/28 17:19:12 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:53 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t	i;
+	size_t	j;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	i = 0;
+	j = 0;
+	while (src[i])
+		i++;
+	if (size > 0)
 	{
-		ft_printf("Error\n");
-		return (0);
+		while (j < size - 1 && src[j])
+		{
+			dst[j] = src[j];
+			j++;
+		}
+		dst[j] = '\0';
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	return (i);
 }

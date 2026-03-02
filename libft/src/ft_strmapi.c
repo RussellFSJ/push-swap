@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/03 17:30:58 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:56 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+char	*ft_strmapi(char const *a, char (*f)(unsigned int, char))
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t	len;
+	size_t	i;
+	char	*str;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	if (!a || !f)
+		return (NULL);
+	i = 0;
+	len = ft_strlen(a);
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	while (i < len)
 	{
-		ft_printf("Error\n");
-		return (0);
+		str[i] = f(i, a[i]);
+		i++;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	str[len] = '\0';
+	return (str);
 }

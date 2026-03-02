@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/03 18:33:33 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 13:59:44 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
+	if (!lst || !new)
 		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
-
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	new->next = *lst;
+	*lst = new;
 }

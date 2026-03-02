@@ -1,44 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/11/22 21:30:32 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:00:59 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
-
-void	push_swap(t_list *stack)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
+	size_t	i;
+	size_t	j;
 
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
+	i = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		ft_printf("Error\n");
-		return (0);
+		j = 0;
+		if (big[i] == little[j])
+		{
+			while (i + j < len && little[j] && big[i + j] == little[j])
+				j++;
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
+		}
+		i++;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	return (NULL);
 }

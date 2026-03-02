@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   handle_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by russ1337          #+#    #+#             */
-/*   Updated: 2026/03/02 14:29:29 by rfoo             ###   ########.fr       */
+/*   Created: 2025/12/18 19:03:39 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 14:01:13 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_valid_stack(t_list *stack);
+static int	print_int(long nbr);
 
-void	push_swap(t_list *stack)
+int	handle_int(va_list *args)
 {
-	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
+	int	n;
+
+	n = va_arg(*args, int);
+	return (print_int((long)n));
 }
 
-static int	is_valid_stack(t_list *stack)
+static int	print_int(long nbr)
 {
-	if (!stack)
+	int		bytes;
+
+	bytes = 0;
+	if (nbr < 0)
 	{
-		ft_printf("Error\n");
-		return (0);
+		bytes += write(1, "-", 1);
+		nbr = -nbr;
 	}
-	while (stack)
-	{
-		if (!ft_isdigit(stack->content)) // doesnt work please fix
-			return (0);
-		else
-			stack = stack->next;
-	}
-	return (1);
+	if (nbr >= 10)
+		bytes += print_int(nbr / 10);
+	bytes += write(1, &(char){(nbr % 10) + '0'}, 1);
+	return (bytes);
 }
