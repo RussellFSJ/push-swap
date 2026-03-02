@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   is_valid_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/26 02:05:27 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/02 17:17:37 by rfoo             ###   ########.fr       */
+/*   Created: 2026/03/02 19:34:02 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/02 20:33:16 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-static int	is_valid_stack(t_list *stack);
+// static int	is_integer(char	*number);
+// static int	has_duplicates(t_list *stack);
 
-void	push_swap(t_list *stack)
+int	is_valid_stack(t_list *stack)
 {
 	if (!stack)
-	{
-		ft_printf("Error\n");
-		return ;
-	}
-	while (stack->next)
-	{
-	}
-}
-
-static int	is_valid_stack(t_list *stack)
-{
-	if (!stack)
-	{
-		ft_printf("Error\n");
 		return (0);
-	}
 	while (stack)
 	{
-		if (!ft_isdigit(ft_atoi(stack->content)))
-			return (0);
-		else
-			stack = stack->next;
+		// if (!is_integer())
 	}
+
 	return (1);
 }
+
