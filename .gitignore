@@ -1,11 +1,11 @@
-// files
+// pdf files
 *.pdf
-*.txt
 
 // executables
 *.out
 
-// object files
+// build files
+/build
 *.o
 
 // libraries
@@ -14,4 +14,3 @@
 
 // vs code settings
 .vscode
-
