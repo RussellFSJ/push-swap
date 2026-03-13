@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/02 19:34:41 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/03/13 18:53:35 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,4 @@
 void	push_swap(t_list *stack);
 
 
-#endif PUSH_SWAP_H
+#endif
