@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/18 23:00:49 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/03/19 20:48:55 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 # include "libft.h"
 
 void	push_swap(t_list *stack);
-long	ft_atol(const char *nptr);
+int		add_to_stack(t_list **stack, long *num_arr, long num);
 t_list	*build_stack(size_t size, char **nums);
+long	ft_atol(const char *nptr);
+void	*handle_invalid_stack(long *num_arr, t_list **stack);
+int		is_duplicate(size_t last_index, long *num_arr, long num);
+int 	is_integer(char *str);
 
 #endif
