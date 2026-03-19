@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	push(t_list **src, t_list **dest, char *step)
+void	push(t_list **src, t_list **dest, char *op)
 {
 	t_list	*tmp;
 
@@ -8,7 +8,6 @@ void	push(t_list **src, t_list **dest, char *step)
 		return ;
 	tmp = *src;
 	*src = (*src)->next;
-	tmp->next = *dest;
-	*dest = tmp;
-	ft_printf("%s\n", step);
+	ft_lstadd_front(dest, tmp);
+	ft_printf("%s\n", op);
 }
