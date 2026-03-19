@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:34:02 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/18 22:59:35 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:47:44 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,13 @@ static int	is_duplicate(size_t last_index, long *num_arr, long num)
 
 static int	add_to_stack(t_list **stack, long *num_arr, long num)
 {
-	long *val;
+	long *content;
 	
-	val = malloc(sizeof(long));
-	if (!val)
+	content = malloc(sizeof(long));
+	if (!content)
 	return (0);
-	*val = num;
-	ft_lstadd_back(stack, ft_lstnew(val));
+	*content = num;
+	ft_lstadd_back(stack, ft_lstnew(content));
 	return (1);
 }
 
@@ -97,6 +97,6 @@ static void	*handle_invalid_stack(long *num_arr, t_list **stack)
 {
 	free(num_arr);
 	ft_lstclear(stack, free);
-	ft_printf("Error\n");
+	// ft_printf("Error\n");
 	return (NULL);
 }
