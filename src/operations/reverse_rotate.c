@@ -6,13 +6,34 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:17:44 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/30 17:17:45 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/03/30 19:58:27 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_list **stack, char *op)
+static void	reverse_rotate(t_list **stack);
+
+void	rra(t_list **a)
+{
+	reverse_rotate(a);
+	ft_printf("rra");
+}
+
+void	rrb(t_list **b)
+{
+	reverse_rotate(b);
+	ft_printf("rrb");
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_printf("rrr");
+}
+
+static void	reverse_rotate(t_list **stack)
 {
 	t_list	*last_node;
 	t_list	*previous_node;
@@ -28,5 +49,4 @@ void	reverse_rotate(t_list **stack, char *op)
 	}
 	previous_node->next = NULL;
 	ft_lstadd_front(stack, last_node);
-	ft_printf("%s\n", op);
 }

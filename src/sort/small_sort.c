@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/30 17:17:24 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/30 19:48:25 by rfoo             ###   ########.fr       */
+/*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
+/*   Updated: 2026/03/30 20:00:59 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_list **src, t_list **dest);
+static void	sort_three(t_list **stack);
 
-void	pa(t_list **b, t_list **a)
+void	small_sort(t_list **a, t_list **b, size_t stack_size)
 {
-	push(b, a);
-	ft_printf("pa");
-}
-
-void	pb(t_list **a, t_list **b)
-{
-	push(a, b);
-	ft_printf("pb");
-}
-
-static void	push(t_list **src, t_list **dest)
-{
-	t_list	*tmp;
-
-	if (!src || !*src)
+	if (stack_size < 2)
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	ft_lstadd_front(dest, tmp);
+	else if (stack_size == 2)
+	{
+		if (is_sorted(a))
+			return ;
+		swap(a, "sa");
+		return ;
+	}
+	else if (stack_size >= 3)
+	{
+		return ;
+	}
 }
+
+static void	sort_three(t_list **stack)
+{
+	
+}
+
