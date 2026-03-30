@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/19 21:19:27 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/03/30 20:01:12 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,28 @@
 # include <limits.h>
 # include "libft.h"
 
-void	push(t_list **src, t_list **dest, char *step);
-void	swap(t_list **stack, char *op);
-int		add_to_stack(t_list **stack, long *num_arr, long num);
+// operations
+void	sa(t_list **a);
+void	sb(t_list **b);
+void	ss(t_list **a, t_list **b);
+void	pa(t_list **b, t_list **a);
+void	pb(t_list **a, t_list **b);
+void	ra(t_list **a);
+void	rb(t_list **b);
+void	rr(t_list **a, t_list **b);
+void	rra(t_list **a);
+void	rrb(t_list **b);
+void	rrr(t_list **a, t_list **b);
+
+// sort
+void	small_sort(t_list **a, t_list **b, size_t stack_size);
+
+// utils
 t_list	*build_stack(size_t size, char **nums);
 long	ft_atol(const char *nptr);
-void	*handle_invalid_stack(long *num_arr, t_list **stack);
-int		is_duplicate(size_t last_index, long *num_arr, long num);
-int 	is_integer(char *str);
+int		is_sorted(t_list **stack);
+
+// push_swap
 void	push_swap(t_list *stack);
 
 #endif
