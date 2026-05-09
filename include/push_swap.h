@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/30 20:01:12 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/09 17:18:09 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	small_sort(t_list **a, t_list **b, size_t stack_size);
 t_list	*build_stack(size_t size, char **nums);
 long	ft_atol(const char *nptr);
 int		is_sorted(t_list **stack);
+int		find_min(t_list **stack);
 
 // push_swap
 void	push_swap(t_list *stack);
