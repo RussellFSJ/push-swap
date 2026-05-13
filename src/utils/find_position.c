@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 20:09:19 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/09 20:09:19 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/13 19:31:57 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ size_t	find_position(t_list *stack, int value)
 	position = 0;
 	while (stack)
 	{
-
+		if (stack->content == value)
+			return (position);
+		stack = stack->next;
+		position++;
 	}
+	return ((size_t) - 1);
 }
