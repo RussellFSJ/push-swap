@@ -3,40 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/07 21:38:50 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/14 02:28:43 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_three(t_list **stack);
+static void sort_three(t_list **stack);
 
-void	small_sort(t_list **a, t_list **b, size_t stack_size)
+void small_sort(t_list **a, t_list **b, size_t stack_size)
 {
 	if (stack_size < 2)
-		return ;
+		return;
 	else if (stack_size == 2)
 	{
 		if (is_sorted(a))
-			return ;
+			return;
 		sa(a);
-		return ;
+		return;
 	}
 	else if (stack_size >= 3)
 	{
-		return ;
+		sort_three(a);
+		return;
 	}
 }
 
-static void	sort_three(t_list **stack)
+static void sort_three(t_list **stack)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
-	i=0;
-	j=0;
+	i = 0;
+	j = 0;
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/09 20:43:28 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/14 02:30:22 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "libft.h"
 
 // operations
-void	sa(t_list **a);
-void	sb(t_list **b);
+void	swap_a(t_list **a);
+void	swap_b(t_list **b);
 void	ss(t_list **a, t_list **b);
 void	pa(t_list **b, t_list **a);
 void	pb(t_list **a, t_list **b);

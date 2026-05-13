@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
+/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:18:08 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/30 19:59:48 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/03/31 15:24:44 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 static void	swap(t_list **stack);
 
-void	sa(t_list **a)
+void	swap_a(t_list **a)
 {
 	swap(a);
-	ft_printf("sa");
+	ft_printf("sa\n");
 }
 
-void	sb(t_list **b)
+void	swap_b(t_list **b)
 {
 	swap(b);
-	ft_printf("sb");
+	ft_printf("sb\n");
 }
 
 void	ss(t_list **a, t_list **b)
 {
 	swap(a);
 	swap(b);
-	ft_printf("ss");
+	ft_printf("ss\n");
 }
 
 static void	swap(t_list **stack)
