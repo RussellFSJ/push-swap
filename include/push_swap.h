@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/14 02:30:22 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/05/15 03:09:29 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ long	ft_atol(const char *nptr);
 int		is_sorted(t_list **stack);
 int		find_min(t_list **stack);
 size_t	find_position(t_list *stack, int value);
+void	move_to_top(t_list *stack, int value);
 
 // push_swap
 void	push_swap(t_list *stack);

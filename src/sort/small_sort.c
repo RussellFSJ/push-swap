@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/14 02:28:43 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/05/15 03:09:49 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,40 @@ static void sort_three(t_list **stack);
 
 void small_sort(t_list **a, t_list **b, size_t stack_size)
 {
-	if (stack_size < 2)
-		return;
+	if (stack_size < 2 || is_sorted(a))
+		return ;
 	else if (stack_size == 2)
-	{
-		if (is_sorted(a))
-			return;
 		sa(a);
-		return;
-	}
 	else if (stack_size >= 3)
 	{
 		sort_three(a);
-		return;
 	}
 }
 
 static void sort_three(t_list **stack)
 {
-	int i;
-	int j;
+	int	first;
+	int	second;
+	int	third;
 
-	i = 0;
-	j = 0;
+	first = (*stack)->content;
+	second = (*stack)->next->content;
+	third = (*stack)->next->next->content;
+	
+	if (first < second && first < third && second > third)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (first > second && first < third)
+		sa(stack);
+	else if (first < second && first > third)
+		rra(stack);
+	else if (first > second && first > third && second < third)
+		ra(stack);
+	else if (first > second && second > first)
+	{
+		sa(stack);
+		rra(stack);
+	}
 }

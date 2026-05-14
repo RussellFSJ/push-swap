@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   move_to_top.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/30 17:17:24 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/14 16:07:26 by rfoo             ###   ########.fr       */
+/*   Created: 2026/05/13 20:16:11 by rfoo              #+#    #+#             */
+/*   Updated: 2026/05/14 15:57:43 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_list **src, t_list **dest);
-
-void	pa(t_list **b, t_list **a)
+void	move_to_top(t_list **stack, int value)
 {
-	push(b, a);
-	ft_printf("pa\n");
-}
+	size_t	size;
+	size_t	position;
 
-void	pb(t_list **a, t_list **b)
-{
-	push(a, b);
-	ft_printf("pb\n");
-}
-
-static void	push(t_list **src, t_list **dest)
-{
-	t_list	*tmp;
-
-	if (!src || !*src)
+	size = stack_size(*stack);
+	position = find_position(*stack, value);
+	if (position == ((size_t) - 1))
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	ft_lstadd_front(dest, tmp);
+	if (position <= size / 2)
+	{
+		while ((*stack)->content != value)
+			ra(stack);
+	}
+	else
+	{
+		while ((*stack)->content != value)
+			rra(stack);
+	}
 }
