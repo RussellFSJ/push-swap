@@ -6,7 +6,7 @@
 /*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 03:09:29 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/05/15 06:07:08 by russ1337         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ void	small_sort(t_list **a, t_list **b, size_t stack_size);
 
 // utils
 t_list	*build_stack(size_t size, char **nums);
-long	ft_atol(const char *nptr);
-int		is_sorted(t_list **stack);
-int		find_min(t_list **stack);
+int		find_min(t_list *stack);
 size_t	find_position(t_list *stack, int value);
-void	move_to_top(t_list *stack, int value);
+long	ft_atol(const char *nptr);
+size_t	get_stack_size(t_list *stack);
+int		is_sorted(t_list **stack);
+void	move_to_top(t_list **stack, int value);
+
 
 // push_swap
 void	push_swap(t_list *stack);
