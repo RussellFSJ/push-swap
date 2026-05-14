@@ -6,18 +6,18 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 19:15:10 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/13 19:19:39 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/14 15:54:27 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t stack_size(t_list *stack)
+size_t	stack_size(t_list *stack)
 {
 	size_t	size;
 
 	size = 0;
-	while(stack)
+	while (stack)
 	{
 		size++;
 		stack = stack->next;
