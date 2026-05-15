@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: russ1337 <russ1337@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 05:59:25 by russ1337         ###   ########.fr       */
+/*   Updated: 2026/05/15 21:30:54 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	sort_three(t_list **stack)
 	first = (*stack)->content;
 	second = (*stack)->next->content;
 	third = (*stack)->next->next->content;
-	
 	if (first < second && first < third && second > third)
 	{
 		sa(stack);
@@ -65,7 +64,7 @@ static void	sort_three_to_five(t_list **a, t_list **b, size_t stack_size)
 		min = find_min(a);
 		move_to_top(a, min);
 		pb(a, b);
-		small_sort(a, b , stack_size - 1);
+		small_sort(a, b, stack_size - 1);
 		pa(a, b);
 	}
 }
