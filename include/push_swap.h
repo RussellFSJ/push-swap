@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 21:28:36 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/15 23:25:40 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void	swap_a(t_list **a);
 void	swap_b(t_list **b);
 void	ss(t_list **a, t_list **b);
-void	pa(t_list **b, t_list **a);
+void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
 void	ra(t_list **a);
 void	rb(t_list **b);
@@ -31,7 +31,7 @@ void	rrr(t_list **a, t_list **b);
 
 // sort
 void	small_sort(t_list **a, t_list **b, size_t stack_size);
-void	radix_sort(t_list **a, t_list **b);
+void	radix_sort(t_list **a, t_list **b, size_t stack_size);
 
 // utils
 void	add_index_to_lst(t_list *stack, size_t stack_size);
