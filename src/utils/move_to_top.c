@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 20:16:11 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 21:15:29 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 22:16:39 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	move_to_top(t_list **stack, int value)
 		return ;
 	if (position <= size / 2)
 	{
-		while (*(int *)(*stack)->content != value)
+		while (*(long *)(*stack)->content != value)
 			ra(stack);
 	}
 	else
 	{
-		while (*(int *)(*stack)->content != value)
+		while (*(long *)(*stack)->content != value)
 			rra(stack);
 	}
 }
