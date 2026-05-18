@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:53:00 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 23:23:19 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 17:03:01 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ static size_t	get_no_of_passes(size_t stack_size);
 void	radix_sort(t_list **a, t_list **b, size_t stack_size)
 {
 	size_t	bit_position;
+	size_t	no_of_passes;
 	size_t	index;
 	int		num;
 
 	bit_position = 0;
-	while (bit_position < get_no_of_passes(stack_size))
+	no_of_passes = get_no_of_passes(stack_size);
+	while (bit_position < no_of_passes)
 	{
 		index = 0;
 		while (index < stack_size)
@@ -46,7 +48,7 @@ static size_t	get_no_of_passes(size_t stack_size)
 
 	max_index = stack_size - 1;
 	no_of_passes = 0;
-	while ((max_index >> no_of_passes) != 0) 
+	while ((max_index >> no_of_passes) != 0)
 		no_of_passes++;
 	return (no_of_passes);
 }
