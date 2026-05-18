@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:34:02 by rfoo              #+#    #+#             */
-/*   Updated: 2026/03/30 17:10:58 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 21:09:29 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static int	is_integer(char *str);
 static int	is_duplicate(size_t last_index, long *num_arr, long num);
-static int	add_to_stack(t_list **stack, long *num_arr, long num);
+static int	add_to_stack(t_list **stack, long num);
 static void	*handle_invalid_stack(long *num_arr, t_list **stack);
 
 t_list	*build_stack(size_t size, char **nums)
 {
-	int		i;
+	size_t	i;
 	long	num;
 	t_list	*stack;
 	long	*num_arr;
@@ -37,7 +37,7 @@ t_list	*build_stack(size_t size, char **nums)
 		if (is_duplicate(i, num_arr, num))
 			return (handle_invalid_stack(num_arr, &stack));
 		num_arr[i] = num;
-		if (!add_to_stack(&stack, num_arr, num))
+		if (!add_to_stack(&stack, num))
 			return (handle_invalid_stack(num_arr, &stack));
 		i++;
 	}
@@ -69,7 +69,7 @@ static int	is_integer(char *str)
 
 static int	is_duplicate(size_t last_index, long *num_arr, long num)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < last_index)
@@ -81,7 +81,7 @@ static int	is_duplicate(size_t last_index, long *num_arr, long num)
 	return (0);
 }
 
-static int	add_to_stack(t_list **stack, long *num_arr, long num)
+static int	add_to_stack(t_list **stack, long num)
 {
 	long	*content;
 

@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:53:00 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 17:03:01 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 22:00:40 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	radix_sort(t_list **a, t_list **b, size_t stack_size)
 		index = 0;
 		while (index < stack_size)
 		{
-			num = (*a)->content;
+			num = *(int *)(*a)->content;
 			if (((num >> bit_position) & 1) == 0)
 				pb(a, b);
 			else
