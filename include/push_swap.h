@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 23:25:40 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 20:29:24 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "libft.h"
 
 // operations
-void	swap_a(t_list **a);
-void	swap_b(t_list **b);
+void	sa(t_list **a);
+void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
@@ -45,6 +45,6 @@ int		is_sorted(t_list **stack);
 void	move_to_top(t_list **stack, int value);
 
 // push_swap
-void	push_swap(t_list *stack);
+void	push_swap(t_list **a, t_list **b);
 
 #endif

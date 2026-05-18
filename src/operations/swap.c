@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:18:08 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 17:01:28 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 20:29:01 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	swap(t_list **stack);
 
-void	swap_a(t_list **a)
+void	sa(t_list **a)
 {
 	swap(a);
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_list **b)
+void	sb(t_list **b)
 {
 	swap(b);
 	ft_printf("sb\n");

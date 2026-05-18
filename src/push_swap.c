@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 02:05:27 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/15 21:28:57 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/18 20:21:52 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	push_swap(t_list **a, t_list **b)
 	if (stack_size <= 5)
 		small_sort(a, b, stack_size);
 	else
-		return ;
-	
+		radix_sort(a, b, stack_size);
 }
 
 static int	is_valid_stack(t_list *stack)
