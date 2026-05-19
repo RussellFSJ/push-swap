@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 18:10:34 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 20:29:24 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/19 15:35:48 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include "libft.h"
+# include <stdio.h>
 
 // operations
 void	sa(t_list **a);

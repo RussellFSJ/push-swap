@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 02:05:27 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 22:29:40 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/19 17:18:07 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_swap(t_list **a, t_list **b)
 
 	if (!a || !*a || !is_valid_stack(*a))
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return ;
 	}
 	stack_size = get_stack_size(*a);
@@ -33,7 +33,7 @@ void	push_swap(t_list **a, t_list **b)
 static int	is_valid_stack(t_list *stack)
 {
 	long	num;
-	
+
 	while (stack)
 	{
 		num = *(long *)stack->content;

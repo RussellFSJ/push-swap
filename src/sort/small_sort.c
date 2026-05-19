@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 22:16:39 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/19 16:10:11 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,22 @@ static void	sort_three(t_list **stack)
 	first = *(long *)(*stack)->content;
 	second = *(long *)(*stack)->next->content;
 	third = *(long *)(*stack)->next->next->content;
-	if (first < second && first < third && second > third)
-	{
+	if (first > second && second < third && first < third)
 		sa(stack);
-		ra(stack);
-	}
-	else if (first > second && first < third)
-		sa(stack);
-	else if (first < second && first > third)
-		rra(stack);
-	else if (first > second && first > third && second < third)
-		ra(stack);
-	else if (first > second && second > first)
+	else if (first > second && second > third)
 	{
 		sa(stack);
 		rra(stack);
 	}
+	else if (first > second && second < third && first > third)
+		ra(stack);
+	else if (first < second && second > third && first < third)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (first < second && second > third && first > third)
+		rra(stack);
 }
 
 static void	sort_three_to_five(t_list **a, t_list **b, size_t stack_size)
