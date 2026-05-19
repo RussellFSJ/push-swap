@@ -27,6 +27,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@$(MAKE) -C $(LIBFT_DIR) clean
+	rm -rf $(BUILD_DIR)
 	rm -f $(OBJ_FILES)
 
 fclean:	clean
