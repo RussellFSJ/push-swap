@@ -71,8 +71,8 @@ OR
 
 OR
 
-ARG = $(shuf -i 1-500 -n 5 | xargs)
-./push_swap $(ARG)
+export ARG=$(shuf -i 1-500 -n 5 | xargs)
+./push_swap $ARG
 ```
 ## Resources
 
