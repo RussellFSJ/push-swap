@@ -6,14 +6,11 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 19:29:20 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/19 17:19:14 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/20 21:52:30 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static size_t	get_arr_size(char **arr);
-void			free_arr(char **arr);
 
 int	main(int argc, char **argv)
 {
@@ -23,16 +20,14 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	if (argc == 2)
+	else
 	{
-		arr = ft_split(argv[1], ' ');
+		arr = handle_argv(argc, argv);
 		if (!arr)
 			return (free_arr(arr), 1);
 		a = build_stack(get_arr_size(arr), arr);
 		free_arr(arr);
 	}
-	else
-		a = build_stack((size_t)(argc - 1), argv + 1);
 	if (!a)
 	{
 		write(2, "Error\n", 6);
@@ -41,20 +36,12 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (a)
 		push_swap(&a, &b);
-	return (ft_lstclear(&a, free), ft_lstclear(&b, free), 0);
+	ft_lstclear(&a, free);
+	ft_lstclear(&b, free);
+	return (0);
 }
 
-static size_t	get_arr_size(char **arr)
-{
-	size_t	size;
-
-	size = 0;
-	while (arr[size])
-		size++;
-	return (size);
-}
-
-void	free_arr(char **arr)
+static void	free_arr(char **arr)
 {
 	size_t	i;
 
