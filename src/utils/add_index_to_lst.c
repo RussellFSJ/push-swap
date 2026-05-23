@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 20:27:24 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/18 21:23:01 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/05/23 17:19:06 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	*to_array(t_list *stack, size_t stack_size)
 		return (NULL);
 	while (stack)
 	{
-		arr[index++] = ft_atol(stack->content);
+		arr[index++] = *(long *)stack->content;
 		stack = stack->next;
 	}
 	return (arr);
@@ -73,7 +73,7 @@ static void	assign_index(t_list *stack, int *arr, size_t stack_size)
 		index = 0;
 		while (index < stack_size)
 		{
-			if (ft_atol(stack->content) == arr[index])
+			if (*(long *)stack->content == arr[index])
 			{
 				stack->index = index;
 				break ;
