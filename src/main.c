@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 19:29:20 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/23 17:23:36 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/04 22:17:35 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	size_t	arr_size;
 
 	if (argc < 2)
-		return (0);
+		return (1);
 	else
 	{
 		arr = handle_argv(argc, argv);
@@ -38,6 +38,8 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
+	if (is_sorted(&a))
+		return (1);
 	b = NULL;
 	add_index_to_lst(a, arr_size);
 	push_swap(&a, &b);

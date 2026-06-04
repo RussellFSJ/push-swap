@@ -6,7 +6,7 @@
 /*   By: rfoo <rfoo@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:19:41 by rfoo              #+#    #+#             */
-/*   Updated: 2026/05/19 16:10:11 by rfoo             ###   ########.fr       */
+/*   Updated: 2026/06/04 22:18:31 by rfoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@ static void	sort_three_to_five(t_list **a, t_list **b, size_t stack_size);
 
 void	small_sort(t_list **a, t_list **b, size_t stack_size)
 {
-	if (stack_size >= 2 && !is_sorted(a))
-	{
-		if (stack_size == 2)
-			sa(a);
-		else if (stack_size >= 3)
-			sort_three_to_five(a, b, stack_size);
-	}
+	if (stack_size == 2)
+		sa(a);
+	else if (stack_size >= 3)
+		sort_three_to_five(a, b, stack_size);
 }
 
 static void	sort_three(t_list **stack)
